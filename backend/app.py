@@ -8,6 +8,9 @@ app = Flask(__name__)
 CORS(app) # Enable CORS for Next.js
 
 # Load Artifacts
+# Load Artifacts
+model = None
+load_error = None
 try:
     artifacts = joblib.load('tkd_model_artifacts.pkl')
     model = artifacts['model']
@@ -17,10 +20,14 @@ try:
     feature_cols = artifacts['features']
     print(">>> Model and Artifacts Loaded Successfully")
 except Exception as e:
+    load_error = str(e)
     print(f"CRITICAL ERROR: Could not load model: {e}")
 
 @app.route('/predict', methods=['POST'])
 def predict():
+    if model is None:
+        return jsonify({'error': 'Model not loaded', 'details': load_error}), 503
+
     try:
         data = request.json
         print("Received Data:", data)
