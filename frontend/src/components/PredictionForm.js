@@ -16,23 +16,23 @@ const SEKTORLER = [
 const SEVIYELER = {
     1: {
         isim: 'Çok Düşük Potansiyel',
-        aciklama: 'Giriş seviyesi. Bu kurumla standart bağış veya tek seferlik proje işbirlikleri hedeflenmelidir.'
+        aciklama: 'Giriş seviyesi. Bu kurumla standart bağış veya tek seferlik proje işbirlikleri hedeflenmelidir. Kabul etme olasılıkları düşüktür.'
     },
     2: {
         isim: 'Düşük Potansiyel',
-        aciklama: 'Gelişime açık. Bu kurumla proje bazlı, dönemsel veya çalışan gönüllülüğü içeren işbirlikleri hedeflenmelidir.'
+        aciklama: 'Gelişime açık. Bu kurumla proje bazlı, dönemsel veya çalışan gönüllülüğü içeren işbirlikleri hedeflenmelidir. Kabul etme olasılıkları düşüktür.'
     },
     3: {
         isim: 'Orta Potansiyel',
-        aciklama: 'İdeal büyüme alanı. Bu kurumla yıllık, sürdürülebilir ve orta ölçekli sponsorluklar hedeflenmelidir.'
+        aciklama: 'İdeal büyüme alanı. Bu kurumla yıllık, sürdürülebilir ve orta ölçekli sponsorluklar hedeflenmelidir. Kabul etme olasılıkları orta seviyedir, doğru mesaj ve iletişimle artabilir.'
     },
     4: {
         isim: 'Yüksek Potansiyel',
-        aciklama: 'Stratejik ortak. Bu kurumla uzun vadeli, yüksek hacimli ve çok yönlü işbirlikleri mümkündür.'
+        aciklama: 'Stratejik ortak. Bu kurumla uzun vadeli, yüksek hacimli ve çok yönlü işbirlikleri mümkündür. Kabul etme olasılıkları yüksek seviyedir, doğru mesaj ve iletişimle artabilir.'
     },
     5: {
         isim: 'Çok Yüksek Potansiyel',
-        aciklama: 'Vizyoner Lider. Bu kurumla en üst düzey, çok paydaşlı ve dönüştürücü stratejik ortaklıklar kurulmalıdır.'
+        aciklama: 'Vizyoner Lider. Bu kurumla en üst düzey, çok paydaşlı ve dönüştürücü stratejik ortaklıklar kurulmalıdır. Kabul etme olasılıkları çok yüksek seviyedir, doğru mesaj ve iletişimle artabilir.'
     },
 };
 
@@ -233,7 +233,7 @@ export default function PredictionForm() {
                                     <br /><br />
                                     Bu şirketin gerçek potansiyeli büyük ihtimalle <strong>{SEVIYELER[top1.idx].isim}</strong> veya <strong>{SEVIYELER[top2.idx].isim}</strong> seviyesindedir (Toplam İhtimal: %{combinedConf.toFixed(0)}).
                                     <br /><br />
-                                    Müzakere masasında hedeflemeniz önerilen seviye: <strong>{recName}</strong> 🚀
+                                    İnsan yorumunu ve bilgisayar içgörüsünü beraber hesaba katarak, top-2 sınıflandırmadan hangisinin seçmek istediğinize kendiniz karar vermeniz tavsiye edilir.
                                 </div>
                             );
                         })()}
